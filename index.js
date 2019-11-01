@@ -19,7 +19,7 @@ function displayResults(responseJson) {
     console.log('displayResults ran');
 
     for (let i = 0; i < responseJson.length; i++) {
-        $('#results-list').append(`<li><a href="responseJson[i].html_url">${responseJson[i].name}</a>
+        $('#results-list').append(`<li><a href="${responseJson[i].html_url}" target="_blank">${responseJson[i].name}</a>
 		<p>Description: ${responseJson[i].description}</p><p>Forks Count: ${responseJson[i].forks_count}</p><p>Created: ${responseJson[i].created_at}</p><p>Updated: ${responseJson[i].updated_at}</p><p>Pushed: ${responseJson[i].pushed_at}</p>`);
     }
 }

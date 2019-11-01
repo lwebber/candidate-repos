@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
+    <title>Our Candidate Repos</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
 </head>
@@ -12,13 +12,14 @@
 <body>
     <div class="container">
         <header>
-            <h1>Candidate Repos</h1>
+            <h1>Our Candidate Repos</h1>
             <form id="search">
                 <label for="handle">Search for github handle</label>
-                <input type="text" id="handle" required></input>
-                <input type="radio" id="created" value="created" required>Date created</input>
-                <input type="radio" id="updated" value="updated">Date updated</input>
-                <input type="radio" id="pushed" value="pushed">Date pushed</input>
+                <input type="text" id="handle" required></input><br>
+                <label for="sort">Sort descending by:</label>
+                <input type="radio" name="sort" id="created" value="created" required>Date created</input>
+                <input type="radio" name="sort" id="updated" value="updated">Date updated</input>
+                <input type="radio" name="sort" id="pushed" value="pushed">Date pushed</input>
                 <button type="submit">Search</button>
             </form>
             <h2 id="name"></h2>
