@@ -17,6 +17,8 @@ function run_search(handle, sort_value, max) {
 
 function displayResults(responseJson, max) {
     console.log('displayResults ran');
+    console.log(responseJson);
+
 
     for (let i = 0; i < max; i++) {
         let created_date = new Date(`${responseJson[i].created_at}`);
