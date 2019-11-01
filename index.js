@@ -7,7 +7,7 @@ function run_search(handle, sort_value, max) {
             if (response.ok) {
                 return response.json();
             }
-            /*threw new Error(response.statusText);*/
+            throw new Error(response.statusText)
         })
         .then(responseJson => displayResults(responseJson, max))
         .catch(err => {
