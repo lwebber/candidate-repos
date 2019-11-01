@@ -12,6 +12,10 @@ a {
     color: orangered;
 }
 
+ul {
+    padding: 0;
+}
+
 li {
     border: 1px solid gray;
     padding: 5px;
@@ -20,9 +24,21 @@ li {
     box-shadow: 1px 1px lightgray;
 }
 
-.container,
-header {
+.container {
     margin-left: auto;
     margin-right: auto;
     max-width: 70%;
+}
+
+#search {
+    font-size: 16px;
+}
+
+header,
+#search,
+#results {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 95%;
+    display: block;
 }
