@@ -1,4 +1,4 @@
-function run_search(handle, sort_value) {
+function run_search(handle, sort_value, max) {
 
     $('#name').text(`${handle}'s repos`);
 
@@ -9,16 +9,16 @@ function run_search(handle, sort_value) {
             }
             /*threw new Error(response.statusText);*/
         })
-        .then(responseJson => displayResults(responseJson))
+        .then(responseJson => displayResults(responseJson, max))
         .catch(err => {
             $('#js-error-message').text(`Something went wrong: ${err.message}`);
         });
 }
 
-function displayResults(responseJson) {
+function displayResults(responseJson, max) {
     console.log('displayResults ran');
 
-    for (let i = 0; i < responseJson.length; i++) {
+    for (let i = 0; i < max; i++) {
         let created_date = new Date(`${responseJson[i].created_at}`);
         created_date = created_date.toDateString();
 
@@ -40,7 +40,8 @@ function watchForm() {
         console.log(handle);
         const sort_value = $('input[type="radio"]').val();
         console.log(sort_value);
-        run_search(handle, sort_value);
+        const max = $('#max').val();
+        run_search(handle, sort_value, max);
     });
 }
 
