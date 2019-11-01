@@ -1,6 +1,5 @@
 function run_search(handle, sort_value, max) {
 
-    $('#name').text(`${handle}'s repos`);
 
     fetch(`https://api.github.com/users/${handle}/repos?sort=${sort_value}&type=owner&direction=desc`)
         .then(response => {
@@ -9,21 +8,22 @@ function run_search(handle, sort_value, max) {
             }
             throw new Error(response.statusText)
         })
-        .then(responseJson => displayResults(responseJson, max))
+        .then(responseJson => displayResults(handle, responseJson, max))
         .catch(err => {
             $('#js-error-message').text(`Something went wrong: ${err.message}`);
         });
 }
 
-function displayResults(responseJson, max) {
-    console.log('displayResults ran');
-    console.log(responseJson);
+function displayResults(handle, responseJson, max) {
 
-    /*     if (responseJson.length === 0) {
-            alert("No such user");
-            ('#name').text('No such user');
-        }
-     */
+
+    if (responseJson.length === 0) {
+        $('#name').text(`No such user`).addClass('red');
+    } else {
+        $('#name').text(`${handle}'s repos`);
+    }
+
+
 
     for (let i = 0; i < max; i++) {
         let created_date = new Date(`${responseJson[i].created_at}`);
