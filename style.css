@@ -42,3 +42,7 @@ header,
     max-width: 95%;
     display: block;
 }
+
+.red {
+    color: red;
+}

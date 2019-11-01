@@ -19,6 +19,11 @@ function displayResults(responseJson, max) {
     console.log('displayResults ran');
     console.log(responseJson);
 
+    /*     if (responseJson.length === 0) {
+            alert("No such user");
+            ('#name').text('No such user');
+        }
+     */
 
     for (let i = 0; i < max; i++) {
         let created_date = new Date(`${responseJson[i].created_at}`);
@@ -36,7 +41,7 @@ function displayResults(responseJson, max) {
 }
 
 function watchForm() {
-    $('#search').submit(event => {
+    $('#search-form').on('submit', function(event) {
         event.preventDefault();
         const handle = $('#handle').val();
         console.log(handle);
