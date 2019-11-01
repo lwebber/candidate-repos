@@ -41,8 +41,10 @@ function displayResults(responseJson, max) {
 }
 
 function watchForm() {
-    $('#search-form').on('submit', function(event) {
+    console.log('watch form ran');
+    $('form').submit(event => {
         event.preventDefault();
+        console.log('form submitted');
         const handle = $('#handle').val();
         console.log(handle);
         const sort_value = $('input[type="radio"]').val();
