@@ -1,6 +1,19 @@
+* {
+    padding: 5px;
+}
+
 body {
-    font-family: 'Nunito', sans-serif;
+    font-family: -apple-system, 'avenir next', avenir, roboto, noto, ubuntu, 'helvetica neue', helvetica, arial, sans-serif;
     box-sizing: border-box;
+    background-color: #111111;
+    color: white;
+}
+
+h1 {
+    font-family: 'Bowlby One SC', cursive;
+    font-size: 3em;
+    color: #7FDBFF;
+    border: 1px solid white;
 }
 
 ul {
@@ -9,29 +22,43 @@ ul {
 
 a {
     font-size: 1.5em;
-    color: orangered;
+    color: #7FDBFF;
+    font-family: 'Bowlby One SC', cursive;
+    text-decoration: none;
+}
+
+a:hover {
+    color: whitesmoke;
 }
 
 ul {
     padding: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 li {
-    border: 1px solid gray;
+    border: 2px solid gray;
     padding: 5px;
-    padding-left: 15px;
+    padding-left: 25px;
     margin-bottom: 10px;
-    box-shadow: 1px 1px lightgray;
+    background-color: #85144b;
+    color: white;
+    max-width: 27%;
+    min-width: 27%;
 }
 
 .container {
     margin-left: auto;
     margin-right: auto;
     max-width: 70%;
+    border: 1px solid white;
 }
 
 #search {
     font-size: 16px;
+    border: 1px solid white;
 }
 
 header,
@@ -39,8 +66,11 @@ header,
 #results {
     margin-left: auto;
     margin-right: auto;
-    max-width: 95%;
     display: block;
+}
+
+#restart {
+    float: right;
 }
 
 .red {
